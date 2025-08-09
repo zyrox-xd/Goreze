@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goreze Skin Glow Elixir - Premium Beauty Drink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-pink: #FFCBDD;
+            --ivory-white: #FFFFF8;
+            --gold: #FFD700;
+            --natural-green: #7FB77E;
+            --dark-text: #333333;
+            --light-text: #666666;
+            --section-padding: 80px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--ivory-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 248, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--rose-pink);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--natural-green);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--rose-pink);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--rose-pink);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart-icon {
+            position: relative;
+            margin-right: 20px;
+            font-size: 20px;
+            color: var(--dark-text);
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--rose-pink);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn-primary {
+            background-color: var(--rose-pink);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 203, 221, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background-color: #ffb1c9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 203, 221, 0.6);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--rose-pink);
+            color: var(--rose-pink);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 203, 221, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .btn-gold {
+            background-color: var(--gold);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-gold:hover {
+            background-color: #e6c200;
+            transform: translateY(-3px);
+        }
+        
+        /* Product Hero */
+        .product-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, rgba(255, 255, 248, 0.9) 0%, rgba(255, 255, 248, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-4.0.3') no-repeat center center/cover;
+            position: relative;
+        }
+        
+        .product-container {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .product-gallery {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .main-image {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+        }
+        
+        .main-image img {
+            max-width: 70%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .thumbnail-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .thumbnail.active {
+            border-color: var(--rose-pink);
+        }
+        
+        .thumbnail img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .product-info {
+            width: 50%;
+        }
+        
+        .product-title {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+        
+        .product-tagline {
+            font-size: 20px;
+            color: var(--light-text);
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        
+        .product-description {
+            margin-bottom: 30px;
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+        
+        .key-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .benefit-tag {
+            background-color: rgba(255, 203, 221, 0.2);
+            color: var(--dark-text);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .pricing-section {
+            background-color: rgba(255, 255, 248, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .price-option {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .price-option:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .option-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .option-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .option-price {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .option-details {
+            color: var(--light-text);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .add-to-cart {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 5px;
+        }
+        
+        .quantity-btn {
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-text);
+        }
+        
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            border: none;
+            background: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        /* Ingredients Section */
+        .ingredients-section {
+            padding: var(--section-padding);
+            background-color: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--rose-pink);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .ingredient-card {
+            background-color: var(--ivory-white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .ingredient-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .ingredient-icon {
+            font-size: 40px;
+            color: var(--rose-pink);
+            margin-bottom: 20px;
+        }
+        
+        .ingredient-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+        
+        .ingredient-description {
+            color: var(--light-text);
+            font-size: 15px;
+        }
+        
+        /* How to Use Section */
+        .how-to-use {
+            padding: var(--section-padding);
+            background: linear-gradient(to bottom, var(--ivory-white) 0%, white 100%);
+        }
+        
+        .usage-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .usage-image {
+            width: 40%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .usage-image img {
+            width: 100%;
+            display: block;
+        }
+        
+        .usage-content {
+            width: 60%;
+        }
+        
+        .usage-content h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .usage-steps {
+            margin-bottom: 30px;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background-color: var(--rose-pink);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        
+        .step-content p {
+            color: var(--light-text);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: var(--section-padding);
+            background-color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--ivory-white);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: var(--section-padding);
+            background: linear-gradient(to bottom, white 0%, var(--ivory-white) 100%);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            font-family: 'Playfair Display', serif;
+            color: rgba(255, 203, 221, 0.3);
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: var(--light-text);
+            font-style: italic;
+            padding-top: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 22px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--rose-pink);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--rose-pink);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .product-container {
+                flex-direction: column;
+            }
+            
+            .product-gallery, .product-info {
+                width: 100%;
+            }
+            
+            .usage-container {
+                flex-direction: column;
+            }
+            
+            .usage-image, .usage-content {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-image {
+                height: 400px;
+            }
+            
+            .product-title {
+                font-size: 36px;
+            }
+            
+            .add-to-cart {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Gore<span>ze</span></a>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Ingredients</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Hero -->
+    <section class="product-hero">
+        <div class="container product-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="image/goreze_pic1.png" alt="Goreze Skin Glow Elixir" id="mainImage">
+                </div>
+                <div class="thumbnail-row">
+                    <div class="thumbnail active" data-image="https://images.unsplash.com/photo-1599351431405-41e8b8f89d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80">
+                        <img src="https://images.unsplash.com/photo-1599351431405-41e8b8f89d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bottle">
+                    </div>
+                    <div class="thumbnail" data-image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ingredients">
+                    </div>
+                    <div class="thumbnail" data-image="https://images.unsplash.com/photo-1591262184850-7a0b71a0eb91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80">
+                        <img src="https://images.unsplash.com/photo-1591262184850-7a0b71a0eb91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Lifestyle">
+                    </div>
+                    <div class="thumbnail" data-image="https://images.unsplash.com/photo-1629203851122-3726ec867058?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80">
+                        <img src="https://images.unsplash.com/photo-1629203851122-3726ec867058?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Nutrition Facts">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <h1 class="product-title">Goreze Skin Glow Elixir</h1>
+                <p class="product-tagline">Glow Naturally. Drink Goreze.</p>
+                <p class="product-description">A premium, ready-to-drink skin glow supplement made from a rich blend of Amla, Beetroot, Pomegranate, Rose Extract, and Vitamin C — crafted for beauty and wellness from within.</p>
+                
+                <div class="key-benefits">
+                    <div class="benefit-tag">Glowing Skin in 21 Days</div>
+                    <div class="benefit-tag">Reduces Pigmentation & Acne</div>
+                    <div class="benefit-tag">Supports Collagen & Hydration</div>
+                    <div class="benefit-tag">Detox & Rich in Antioxidants</div>
+                </div>
+                
+                <div class="pricing-section">
+                    <div class="price-option">
+                        <div class="option-header">
+                            <div class="option-title">Single Bottle</div>
+                            <div class="option-price">₹149</div>
+                        </div>
+                        <p class="option-details">60ml bottled drink - Perfect to try</p>
+                        <div class="add-to-cart">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="text" class="quantity-input" value="1" readonly>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <button class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="price-option">
+                        <div class="option-header">
+                            <div class="option-title">Glow Kit (10 Bottles)</div>
+                            <div class="option-price">₹1,299</div>
+                        </div>
+                        <p class="option-details">Save ₹191 (₹129.90 per bottle)</p>
+                        <div class="add-to-cart">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="text" class="quantity-input" value="1" readonly>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <button class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="price-option">
+                        <div class="option-header">
+                            <div class="option-title">Subscribe & Save</div>
+                            <div class="option-price">₹1,199/month</div>
+                        </div>
+                        <p class="option-details">Save ₹291 first order (₹119.90 per bottle)</p>
+                        <button class="btn btn-gold">Subscribe Now</button>
+                    </div>
+                </div>
+                
+                <div class="trust-badges">
+                    <p><i class="fas fa-check-circle" style="color: var(--natural-green);"></i> Lab-tested & certified</p>
+                    <p><i class="fas fa-check-circle" style="color: var(--natural-green);"></i> 100% natural ingredients</p>
+                    <p><i class="fas fa-check-circle" style="color: var(--natural-green);"></i> Vegan & gluten-free</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="ingredients-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Ingredients</h2>
+                <p>Backed by Science, Loved by Nature</p>
+            </div>
+            
+            <div class="ingredients-grid">
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="ingredient-title">Amla</h3>
+                    <p class="ingredient-description">Rich in natural Vitamin C, boosts collagen production and fights free radicals for radiant skin.</p>
+                </div>
+                
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="ingredient-title">Beetroot</h3>
+                    <p class="ingredient-description">Improves blood circulation and detoxifies the body, promoting a healthy glow from within.</p>
+                </div>
+                
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3 class="ingredient-title">Pomegranate</h3>
+                    <p class="ingredient-description">Packed with antioxidants that protect skin from environmental damage and reduce signs of aging.</p>
+                </div>
+                
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="ingredient-title">Rose Extract</h3>
+                    <p class="ingredient-description">Calming and refreshing, helps balance skin pH and reduces inflammation for clear skin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section class="how-to-use">
+        <div class="container">
+            <div class="section-header">
+                <h2>How to Use</h2>
+                <p>Simple steps for maximum benefits</p>
+            </div>
+            
+            <div class="usage-container">
+                <div class="usage-image">
+                    <img src="https://images.unsplash.com/photo-1547592188-7d5f6e4e6e60?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="How to use Goreze">
+                </div>
+                
+                <div class="usage-content">
+                    <h3>Unlock Your Natural Glow</h3>
+                    <p>For best results, follow these simple steps:</p>
+                    
+                    <div class="usage-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Consume Daily</h4>
+                                <p>Take one 60ml bottle of Goreze every day</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Best Time</h4>
+                                <p>Take on an empty stomach in the morning for optimal absorption</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Stay Consistent</h4>
+                                <p>Visible results typically appear in 2-3 weeks with daily use</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Note:</strong> Shake well before use. Store in a cool, dry place. Refrigerate after opening and consume within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about Goreze</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        Is it safe for daily use?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Goreze is made with 100% natural ingredients and is specifically formulated for daily consumption. Each bottle contains carefully measured ingredients that are safe and beneficial when taken daily.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long before I see results?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most customers notice visible improvements in their skin within 2-3 weeks of daily use. For optimal results, we recommend using Goreze consistently for at least 3 months to see the full benefits of the ingredients.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can men take it too?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, absolutely! Goreze is formulated for all genders. The ingredients benefit skin health regardless of gender, and many men have reported excellent results in improving their skin texture and glow.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is it vegan/gluten-free?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, Goreze is 100% vegan, gluten-free, and free from any animal-derived ingredients. It's suitable for vegetarians, vegans, and people with gluten sensitivities.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Does it contain sugar?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, Goreze contains no added sugar. The natural sweetness comes from the fruits and vegetables in our formula. It's naturally sweetened with stevia leaf extract, making it suitable for diabetics and those watching their sugar intake.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Customer Stories</h2>
+                <p>Real people, real results</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "I've struggled with dull skin for years. After 3 weeks of Goreze, my colleagues started asking what I'd changed. My skin has never looked this radiant!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Mumbai | 28 years</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As a guy who never cared much about skincare, I'm amazed at the difference Goreze made. My acne scars have faded, and I actually look more refreshed!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div class="author-info">
+                            <h4>Rahul Mehta</h4>
+                            <p>Bangalore | 32 years</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The convenience of drinking my skincare is game-changing. My skin glows without the 10-step routine, and I love the taste! Worth every penny."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div class="author-info">
+                            <h4>Ananya Reddy</h4>
+                            <p>Delhi | 25 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Goreze</h3>
+                    <p>Premium, ready-to-drink skin glow supplement crafted for beauty and wellness from within.</p>
+                    <p>Glow Naturally. Drink Goreze.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Ingredients</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Why Choose Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Clean-label Ingredients</a></li>
+                        <li><a href="#">Lab-tested Quality</a></li>
+                        <li><a href="#">Great Taste Guaranteed</a></li>
+                        <li><a href="#">Sustainable Packaging</a></li>
+                        <li><a href="#">100% Natural Formula</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> contact@goreze.in</p>
+                    <p><i class="fab fa-whatsapp"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Goreze. All rights reserved. Glow Naturally.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Thumbnail gallery functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.getElementById('mainImage');
+            
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    // Update main image
+                    const newSrc = this.getAttribute('data-image');
+                    mainImage.src = newSrc;
+                    
+                    // Update active thumbnail
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Quantity selector functionality
+            const minusBtns = document.querySelectorAll('.minus');
+            const plusBtns = document.querySelectorAll('.plus');
+            const quantityInputs = document.querySelectorAll('.quantity-input');
+            
+            minusBtns.forEach((btn, index) => {
+                btn.addEventListener('click', function() {
+                    let currentValue = parseInt(quantityInputs[index].value);
+                    if(currentValue > 1) {
+                        quantityInputs[index].value = currentValue - 1;
+                    }
+                });
+            });
+            
+            plusBtns.forEach((btn, index) => {
+                btn.addEventListener('click', function() {
+                    let currentValue = parseInt(quantityInputs[index].value);
+                    quantityInputs[index].value = currentValue + 1;
+                });
+            });
+            
+            // FAQ accordion functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Toggle active class
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all items
+                    faqItems.forEach(i => i.classList.remove('active'));
+                    
+                    // Open clicked item if it wasn't active
+                    if(!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Add to cart functionality
+            const addToCartBtns = document.querySelectorAll('.btn-primary');
+            const cartCount = document.querySelector('.cart-count');
+            
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if(e.target.classList.contains('btn-primary')) {
+                        e.preventDefault();
+                        let count = parseInt(cartCount.textContent);
+                        count++;
+                        cartCount.textContent = count;
+                        
+                        // Add animation effect
+                        cartCount.parentElement.classList.add('pulse');
+                        setTimeout(() => {
+                            cartCount.parentElement.classList.remove('pulse');
+                        }, 300);
+                        
+                        // Show success message
+                        alert('Added to cart successfully!');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Goreze | Beauty from Within</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-pink: #FFCBDD;
+            --ivory-white: #FFFFF8;
+            --gold: #FFD700;
+            --natural-green: #7FB77E;
+            --dark-text: #333333;
+            --light-text: #666666;
+            --section-padding: 80px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--ivory-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 248, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--rose-pink);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--natural-green);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--rose-pink);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--rose-pink);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart-icon {
+            position: relative;
+            margin-right: 20px;
+            font-size: 20px;
+            color: var(--dark-text);
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--rose-pink);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn-primary {
+            background-color: var(--rose-pink);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 203, 221, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background-color: #ffb1c9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 203, 221, 0.6);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--rose-pink);
+            color: var(--rose-pink);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 203, 221, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, rgba(255, 255, 248, 0.9) 0%, rgba(255, 255, 248, 0.7) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            color: var(--light-text);
+            margin-bottom: 30px;
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto 0;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-ingredients {
+            position: absolute;
+            z-index: 1;
+            opacity: 0.1;
+        }
+        
+        .floating-ingredients.one {
+            top: 10%;
+            left: 5%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .floating-ingredients.two {
+            top: 20%;
+            right: 5%;
+            animation: float 7s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        .floating-ingredients.three {
+            bottom: 10%;
+            left: 15%;
+            animation: float 9s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+        
+        /* Story Section */
+        .our-story {
+            padding: var(--section-padding);
+            background-color: white;
+        }
+        
+        .story-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .story-image {
+            width: 50%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .story-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .story-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .story-content {
+            width: 50%;
+        }
+        
+        .section-title {
+            margin-bottom: 30px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--rose-pink);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .story-content p {
+            color: var(--light-text);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .foundation-details {
+            background-color: var(--ivory-white);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 4px solid var(--rose-pink);
+        }
+        
+        /* Mission Section */
+        .mission-vision {
+            padding: var(--section-padding);
+            background: linear-gradient(to bottom, var(--ivory-white) 0%, white 100%);
+            text-align: center;
+        }
+        
+        .mission-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .mission-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 203, 221, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: var(--rose-pink);
+        }
+        
+        .mission-card h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .mission-card p {
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+        
+        /* Values Section */
+        .our-values {
+            padding: var(--section-padding);
+            background-color: white;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--ivory-white);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            color: var(--natural-green);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .value-card p {
+            color: var(--light-text);
+        }
+        
+        /* Team Section */
+        .our-team {
+            padding: var(--section-padding);
+            background: linear-gradient(to bottom, white 0%, var(--ivory-white) 100%);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+        
+        .member-info {
+            padding: 25px 20px;
+        }
+        
+        .member-info h3 {
+            margin-bottom: 5px;
+        }
+        
+        .member-info p {
+            color: var(--light-text);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--ivory-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-text);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--rose-pink);
+            color: white;
+        }
+        
+        /* Why Choose Us */
+        .why-choose {
+            padding: var(--section-padding);
+            background-color: white;
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            padding: 30px;
+            background-color: var(--ivory-white);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 203, 221, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--rose-pink);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .feature-card p {
+            color: var(--light-text);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--rose-pink) 0%, #ffa0c1 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 22px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--rose-pink);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--rose-pink);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .story-container {
+                flex-direction: column;
+            }
+            
+            .story-image, .story-content {
+                width: 100%;
+            }
+            
+            .mission-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Gore<span>ze</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Ingredients</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="floating-ingredients one">
+            <img src="https://images.unsplash.com/photo-1591262184850-7a0b71a0eb91?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Pomegranate">
+        </div>
+        <div class="floating-ingredients two">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Beetroot">
+        </div>
+        <div class="floating-ingredients three">
+            <img src="https://images.unsplash.com/photo-1591262184850-7a0b71a0eb91?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Amla">
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>Where Beauty Begins Within</h1>
+                <p>Goreze was born from the belief that true radiance comes from nourishing your body with nature's finest ingredients. We're redefining skincare by making it as simple as sipping your morning drink.</p>
+                <a href="#" class="btn btn-primary">Discover Our Products</a>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1547592188-7d5f6e4e6e60?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Goreze Founder">
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container story-container">
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Goreze Inspiration">
+            </div>
+            
+            <div class="story-content">
+                <div class="section-title">
+                    <h2>Our Journey</h2>
+                </div>
+                
+                <p>Goreze was founded in 2025 in Bengaluru by a team of nutritionists and skincare enthusiasts who were frustrated with the complicated, ineffective skincare routines that filled the market. We noticed that despite the abundance of topical products, people were still struggling with skin issues that often originated from nutritional deficiencies.</p>
+                
+                <p>Our journey began with a simple question: "What if achieving radiant skin could be as simple as drinking your morning beverage?" This question led us to explore the powerful connection between nutrition and skin health, guided by both Ayurvedic wisdom and modern nutritional science.</p>
+                
+                <p>After two years of research and development, working with dermatologists and nutrition experts, we perfected our blend of five powerful ingredients that work synergistically to nourish skin from within. Today, Goreze is helping thousands of people achieve their healthiest, most radiant skin with just one sip a day.</p>
+                
+                <div class="foundation-details">
+                    <p><strong>Founded:</strong> March 2025, Bengaluru</p>
+                    <p><strong>Mission:</strong> To make skincare as simple as sipping your morning drink</p>
+                    <p><strong>Vision:</strong> A world where everyone can achieve healthy, radiant skin through natural nutrition</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission & Vision</h2>
+            </div>
+            
+            <div class="mission-container">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To revolutionize skincare by creating clean, effective nutritional supplements that make achieving radiant skin effortless. We combine ancient wisdom with modern science to deliver products that work from within, reducing the need for complicated topical routines.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To become the most trusted brand for inner beauty solutions worldwide. We envision a future where people prioritize nourishing their bodies as the foundation of beautiful skin, leading to greater confidence and well-being for all.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="our-values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Natural Efficacy</h3>
+                    <p>We believe in the power of nature. Our formulas harness potent natural ingredients that deliver real results without harsh chemicals.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Science-Backed</h3>
+                    <p>Every ingredient is chosen based on scientific research to ensure efficacy and safety. We blend tradition with modern nutrition science.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Transparency</h3>
+                    <p>We're open about what goes into our products. No hidden ingredients, no misleading claims - just honest, clean-label formulations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>From sourcing to packaging, we prioritize eco-friendly practices. Our bottles are recyclable and we partner with ethical suppliers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="our-team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Founders</h2>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ananya Sharma">
+                    </div>
+                    <div class="member-info">
+                        <h3>Ananya Sharma</h3>
+                        <p>Co-Founder & Nutrition Expert</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Raj Mehta">
+                    </div>
+                    <div class="member-info">
+                        <h3>Raj Mehta</h3>
+                        <p>Co-Founder & Product Developer</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Priya Patel">
+                    </div>
+                    <div class="member-info">
+                        <h3>Priya Patel</h3>
+                        <p>Head of Research & Ayurvedic Specialist</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Goreze</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Clean-Label Formula</h3>
+                    <p>No artificial colors, flavors, or preservatives. Just pure, natural ingredients you can trust.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Lab-Tested Quality</h3>
+                    <p>Every batch undergoes rigorous testing to ensure purity, potency, and safety.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Delicious Taste</h3>
+                    <p>We believe wellness should be enjoyable. Our elixir tastes as good as it makes you feel.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Visible Results</h3>
+                    <p>Experience a noticeable glow, reduced pigmentation, and healthier skin in just 2-3 weeks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Glow Journey?</h2>
+            <p>Join thousands of satisfied customers who have discovered the power of beauty from within.</p>
+            <a href="#" class="btn btn-secondary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Goreze</h3>
+                    <p>Premium, ready-to-drink skin glow supplement crafted for beauty and wellness from within.</p>
+                    <p>Glow Naturally. Drink Goreze.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Ingredients</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Why Choose Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Clean-label Ingredients</a></li>
+                        <li><a href="#">Lab-tested Quality</a></li>
+                        <li><a href="#">Great Taste Guaranteed</a></li>
+                        <li><a href="#">Sustainable Packaging</a></li>
+                        <li><a href="#">100% Natural Formula</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> contact@goreze.in</p>
+                    <p><i class="fab fa-whatsapp"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Goreze. All rights reserved. Glow Naturally.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for the hero section
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation to team members on scroll
+            const teamMembers = document.querySelectorAll('.team-member');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            teamMembers.forEach(member => {
+                member.style.opacity = 0;
+                member.style.transform = 'translateY(30px)';
+                member.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(member);
+            });
+        });
+    </script>
+</body>
+</html>

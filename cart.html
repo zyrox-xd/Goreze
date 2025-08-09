@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Goreze Premium Beauty Drink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-pink: #FFCBDD;
+            --ivory-white: #FFFFF8;
+            --gold: #FFD700;
+            --natural-green: #7FB77E;
+            --dark-text: #333333;
+            --light-text: #666666;
+            --section-padding: 80px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--ivory-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 248, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--rose-pink);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--natural-green);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--rose-pink);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--rose-pink);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart-icon {
+            position: relative;
+            margin-right: 20px;
+            font-size: 20px;
+            color: var(--dark-text);
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--rose-pink);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn-primary {
+            background-color: var(--rose-pink);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 203, 221, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background-color: #ffb1c9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 203, 221, 0.6);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--rose-pink);
+            color: var(--rose-pink);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 203, 221, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .btn-gold {
+            background-color: var(--gold);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-gold:hover {
+            background-color: #e6c200;
+            transform: translateY(-3px);
+        }
+        
+        /* Cart Hero */
+        .cart-hero {
+            padding: 150px 0 50px;
+            background: linear-gradient(135deg, rgba(255, 255, 248, 0.9) 0%, rgba(255, 255, 248, 0.7) 100%);
+            text-align: center;
+        }
+        
+        .cart-hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .cart-hero p {
+            font-size: 18px;
+            color: var(--light-text);
+        }
+        
+        /* Cart Section */
+        .cart-section {
+            padding: var(--section-padding);
+        }
+        
+        .cart-container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .cart-items {
+            flex: 2;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .cart-title {
+            font-size: 28px;
+        }
+        
+        .cart-item {
+            display: flex;
+            padding: 25px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .item-image {
+            width: 120px;
+            height: 120px;
+            margin-right: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--ivory-white);
+            border-radius: 15px;
+            padding: 15px;
+        }
+        
+        .item-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .item-details {
+            flex: 1;
+        }
+        
+        .item-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .item-type {
+            color: var(--light-text);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .item-price {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .item-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .remove-item {
+            color: var(--rose-pink);
+            cursor: pointer;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .remove-item:hover {
+            color: #ff5d9e;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 5px;
+        }
+        
+        .quantity-btn {
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-text);
+        }
+        
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            border: none;
+            background: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .cart-summary {
+            flex: 1;
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+        
+        .summary-title {
+            font-size: 24px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .summary-total {
+            font-weight: 700;
+            font-size: 22px;
+            margin: 25px 0;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .promo-section {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+        
+        .promo-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .promo-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .promo-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+        }
+        
+        .promo-btn {
+            padding: 12px 20px;
+            background-color: var(--natural-green);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .promo-btn:hover {
+            background-color: #6eaa6d;
+        }
+        
+        .promo-success {
+            color: var(--natural-green);
+            font-weight: 500;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 60px 0;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .empty-cart i {
+            font-size: 60px;
+            color: var(--rose-pink);
+            margin-bottom: 20px;
+        }
+        
+        .empty-cart h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        /* Recommendation Section */
+        .recommendations {
+            padding: 60px 0;
+            background-color: var(--ivory-white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--rose-pink);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .product-image {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(255, 255, 248, 0.8) 0%, rgba(255, 255, 248, 0.6) 100%);
+        }
+        
+        .product-image img {
+            max-width: 70%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--gold);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+        
+        .product-price span {
+            font-size: 16px;
+            color: var(--light-text);
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+        
+        .product-actions {
+            margin-top: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 22px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--rose-pink);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--rose-pink);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .cart-container {
+                flex-direction: column;
+            }
+            
+            .cart-summary {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .item-image {
+                margin-bottom: 15px;
+            }
+            
+            .item-actions {
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            .cart-hero h1 {
+                font-size: 36px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Gore<span>ze</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Ingredients</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </div>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Hero -->
+    <section class="cart-hero">
+        <div class="container">
+            <h1>Your Shopping Cart</h1>
+            <p>Review your items and proceed to checkout</p>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container cart-container">
+            <div class="cart-items">
+                <div class="cart-header">
+                    <h2 class="cart-title">Your Items</h2>
+                    <span>3 items</span>
+                </div>
+                
+                <div class="cart-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1599351431405-41e8b8f89d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Goreze Bottle">
+                    </div>
+                    <div class="item-details">
+                        <h3 class="item-title">Goreze Skin Glow Elixir</h3>
+                        <p class="item-type">Single Bottle</p>
+                        <div class="item-price">₹149</div>
+                    </div>
+                    <div class="item-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <div class="remove-item">
+                            <i class="fas fa-trash"></i> Remove
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1591262184850-7a0b71a0eb91?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Glow Kit">
+                    </div>
+                    <div class="item-details">
+                        <h3 class="item-title">Glow Kit (10 Bottles)</h3>
+                        <p class="item-type">Best Value Pack</p>
+                        <div class="item-price">₹1,299</div>
+                    </div>
+                    <div class="item-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <div class="remove-item">
+                            <i class="fas fa-trash"></i> Remove
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1591262184850-7a0b71a0eb91?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Travel Pack">
+                    </div>
+                    <div class="item-details">
+                        <h3 class="item-title">Travel Pack (3 Bottles)</h3>
+                        <p class="item-type">Perfect for On-The-Go</p>
+                        <div class="item-price">₹399</div>
+                    </div>
+                    <div class="item-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <div class="remove-item">
+                            <i class="fas fa-trash"></i> Remove
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <h3 class="summary-title">Order Summary</h3>
+                
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>₹1,847</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>FREE</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Tax</span>
+                    <span>₹277</span>
+                </div>
+                
+                <div class="promo-section">
+                    <h4 class="promo-title">Promo Code</h4>
+                    <div class="promo-input">
+                        <input type="text" placeholder="Enter promo code" id="promoCode">
+                        <button class="promo-btn">Apply</button>
+                    </div>
+                    <div class="promo-success" id="promoSuccess">
+                        <i class="fas fa-check-circle"></i> GLOW15 applied successfully!
+                    </div>
+                </div>
+                
+                <div class="summary-row summary-total">
+                    <span>Total</span>
+                    <span>₹2,124</span>
+                </div>
+                
+                <div class="checkout-btn">
+                    <a href="#" class="btn btn-primary">Proceed to Checkout</a>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="#" class="btn btn-secondary">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="recommendations">
+        <div class="container">
+            <div class="section-header">
+                <h2>You May Also Like</h2>
+                <p>Complete your glow journey</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1599351431405-41e8b8f89d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Night Repair">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Night Repair Elixir</h3>
+                        <div class="product-price">₹1,499</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1599351431405-41e8b8f89d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Glow Booster">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Collagen Boost Powder</h3>
+                        <div class="product-price">₹999</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1599351431405-41e8b8f89d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Beauty Set">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Complete Beauty Set</h3>
+                        <div class="product-price">₹2,499 <span>₹2,999</span></div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Goreze</h3>
+                    <p>Premium, ready-to-drink skin glow supplement crafted for beauty and wellness from within.</p>
+                    <p>Glow Naturally. Drink Goreze.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Ingredients</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Why Choose Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Clean-label Ingredients</a></li>
+                        <li><a href="#">Lab-tested Quality</a></li>
+                        <li><a href="#">Great Taste Guaranteed</a></li>
+                        <li><a href="#">Sustainable Packaging</a></li>
+                        <li><a href="#">100% Natural Formula</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> contact@goreze.in</p>
+                    <p><i class="fab fa-whatsapp"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Goreze. All rights reserved. Glow Naturally.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Quantity selectors
+            const minusBtns = document.querySelectorAll('.minus');
+            const plusBtns = document.querySelectorAll('.plus');
+            const quantityInputs = document.querySelectorAll('.quantity-input');
+            
+            minusBtns.forEach((btn, index) => {
+                btn.addEventListener('click', function() {
+                    let currentValue = parseInt(quantityInputs[index].value);
+                    if(currentValue > 1) {
+                        quantityInputs[index].value = currentValue - 1;
+                        updateCartTotal();
+                    }
+                });
+            });
+            
+            plusBtns.forEach((btn, index) => {
+                btn.addEventListener('click', function() {
+                    let currentValue = parseInt(quantityInputs[index].value);
+                    quantityInputs[index].value = currentValue + 1;
+                    updateCartTotal();
+                });
+            });
+            
+            // Remove item from cart
+            const removeItems = document.querySelectorAll('.remove-item');
+            removeItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const cartItem = this.closest('.cart-item');
+                    cartItem.style.opacity = '0';
+                    cartItem.style.transform = 'translateX(-20px)';
+                    setTimeout(() => {
+                        cartItem.remove();
+                        updateCartTotal();
+                        updateCartCount();
+                    }, 300);
+                });
+            });
+            
+            // Promo code application
+            const promoBtn = document.querySelector('.promo-btn');
+            const promoSuccess = document.getElementById('promoSuccess');
+            
+            if(promoBtn) {
+                promoBtn.addEventListener('click', function() {
+                    const promoCode = document.getElementById('promoCode').value;
+                    if(promoCode.toUpperCase() === 'GLOW15') {
+                        promoSuccess.style.display = 'block';
+                        document.querySelector('.summary-total span').textContent = '₹1,805';
+                        document.querySelector('.summary-total span').classList.add('pulse');
+                        setTimeout(() => {
+                            document.querySelector('.summary-total span').classList.remove('pulse');
+                        }, 500);
+                    } else {
+                        alert('Invalid promo code. Try GLOW15 for 15% off!');
+                    }
+                });
+            }
+            
+            // Update cart total
+            function updateCartTotal() {
+                // In a real implementation, this would calculate based on items
+                console.log('Cart updated');
+            }
+            
+            // Update cart count
+            function updateCartCount() {
+                const cartItems = document.querySelectorAll('.cart-item');
+                const cartCount = document.querySelector('.cart-count');
+                cartCount.textContent = cartItems.length;
+                cartCount.parentElement.classList.add('pulse');
+                setTimeout(() => {
+                    cartCount.parentElement.classList.remove('pulse');
+                }, 300);
+            }
+            
+            // Add to cart buttons
+            const addToCartBtns = document.querySelectorAll('.product-actions .btn');
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const cartCount = document.querySelector('.cart-count');
+                    let count = parseInt(cartCount.textContent);
+                    count++;
+                    cartCount.textContent = count;
+                    
+                    // Add animation effect
+                    cartCount.parentElement.classList.add('pulse');
+                    setTimeout(() => {
+                        cartCount.parentElement.classList.remove('pulse');
+                    }, 300);
+                    
+                    // Show success message
+                    alert('Added to cart successfully!');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

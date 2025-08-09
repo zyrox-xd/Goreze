@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Goreze | Premium Skin Glow Elixir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-pink: #FFCBDD;
+            --ivory-white: #FFFFF8;
+            --gold: #FFD700;
+            --natural-green: #7FB77E;
+            --dark-text: #333333;
+            --light-text: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--ivory-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 248, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--rose-pink);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--natural-green);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--rose-pink);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--rose-pink);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart-icon {
+            position: relative;
+            margin-right: 20px;
+            font-size: 20px;
+            color: var(--dark-text);
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--rose-pink);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn-primary {
+            background-color: var(--rose-pink);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 203, 221, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background-color: #ffb1c9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 203, 221, 0.6);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--rose-pink);
+            color: var(--rose-pink);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 203, 221, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        /* Hero Section */
+        .contact-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, rgba(255, 255, 248, 0.9) 0%, rgba(255, 255, 248, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3') no-repeat center center/cover;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 60px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .contact-form {
+            flex: 1;
+            padding: 60px;
+        }
+        
+        .form-title {
+            margin-bottom: 30px;
+        }
+        
+        .form-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .form-title p {
+            color: var(--light-text);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--rose-pink);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 203, 221, 0.3);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            flex: 1;
+            background: linear-gradient(135deg, var(--rose-pink) 0%, #ffa0c1 100%);
+            padding: 60px;
+            color: white;
+        }
+        
+        .info-title {
+            margin-bottom: 30px;
+        }
+        
+        .info-title h2 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-methods {
+            margin-bottom: 40px;
+        }
+        
+        .contact-method {
+            display: flex;
+            margin-bottom: 30px;
+        }
+        
+        .method-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .method-content h3 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+        
+        .method-content p, .method-content a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .method-content a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: white;
+            color: var(--rose-pink);
+            transform: translateY(-5px);
+        }
+        
+        .map-container {
+            margin-top: 50px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 300px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .map-placeholder i {
+            font-size: 50px;
+            color: var(--rose-pink);
+            margin-bottom: 20px;
+        }
+        
+        .map-placeholder h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, var(--ivory-white) 0%, white 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--rose-pink);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            background-color: white;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 30px 25px;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer p {
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 22px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--rose-pink);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .social-links-footer {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links-footer a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links-footer a:hover {
+            background-color: var(--rose-pink);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .contact-form, .contact-info {
+                padding: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .form-title h2, .info-title h2 {
+                font-size: 28px;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+            }
+            
+            .method-icon {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Gore<span>ze</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Ingredients</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Connect With Us</h1>
+                <p>We'd love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to share your glow journey, our team is here to help.</p>
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <div class="form-title">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                    </div>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="product">Product Inquiry</option>
+                                <option value="order">Order Support</option>
+                                <option value="wholesale">Wholesale Inquiry</option>
+                                <option value="feedback">Feedback & Suggestions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-title">
+                        <h2>Contact Information</h2>
+                        <p>Reach out to us through any of these channels</p>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Email Us</h3>
+                                <a href="mailto:contact@goreze.in">contact@goreze.in</a>
+                                <p>We'll respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>WhatsApp</h3>
+                                <a href="https://wa.me/919876543210" target="_blank">+91 98765 43210</a>
+                                <p>Chat with us directly</p>
+                                <a href="https://wa.me/919876543210" class="btn btn-whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Message Us
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Call Us</h3>
+                                <a href="tel:+918012345678">+91 80 1234 5678</a>
+                                <p>Monday to Friday, 9AM - 6PM IST</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h3>Follow Our Glow Journey</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Our Location</h3>
+                    <p>Bengaluru, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find quick answers to common questions</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        How long does shipping take? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We process orders within 24 hours. Shipping times vary based on location: Metro cities typically receive orders in 2-3 days, while other locations take 4-7 business days. You'll receive a tracking number once your order ships.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is your return policy? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day satisfaction guarantee. If you're not completely happy with your purchase, contact us within 30 days of delivery for a full refund. Products must be unopened and in original packaging for returns.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer wholesale pricing? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer special pricing for retailers, spas, and wellness centers. Please email wholesale@goreze.in with your business details and expected order volume for our wholesale catalog and pricing information.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How should I store Goreze? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Store unopened bottles in a cool, dry place away from direct sunlight. Once opened, refrigerate and consume within 24 hours for maximum freshness and potency. The natural ingredients are best enjoyed fresh!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Goreze</h3>
+                    <p>Premium, ready-to-drink skin glow supplement crafted for beauty and wellness from within.</p>
+                    <p>Glow Naturally. Drink Goreze.</p>
+                    <div class="social-links-footer">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Ingredients</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Why Choose Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Clean-label Ingredients</a></li>
+                        <li><a href="#">Lab-tested Quality</a></li>
+                        <li><a href="#">Great Taste Guaranteed</a></li>
+                        <li><a href="#">Sustainable Packaging</a></li>
+                        <li><a href="#">100% Natural Formula</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> contact@goreze.in</p>
+                    <p><i class="fab fa-whatsapp"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Goreze. All rights reserved. Glow Naturally.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form submission handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    
+                    // Show success message
+                    alert(`Thank you ${name}! Your message has been sent successfully. We'll contact you at ${email} shortly.`);
+                    
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+            
+            // FAQ accordion functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Toggle active class
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all items
+                    faqItems.forEach(i => i.classList.remove('active'));
+                    
+                    // Open clicked item if it wasn't active
+                    if(!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Add to cart functionality
+            const addToCartBtns = document.querySelectorAll('.btn-primary');
+            const cartCount = document.querySelector('.cart-count');
+            
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if(e.target.classList.contains('btn-primary') && e.target.type !== 'submit') {
+                        e.preventDefault();
+                        let count = parseInt(cartCount.textContent);
+                        count++;
+                        cartCount.textContent = count;
+                        
+                        // Add animation effect
+                        cartCount.parentElement.classList.add('pulse');
+                        setTimeout(() => {
+                            cartCount.parentElement.classList.remove('pulse');
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

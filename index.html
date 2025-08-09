@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goreze | Premium Skin Glow Elixir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-pink: #FFCBDD;
+            --ivory-white: #FFFFF8;
+            --gold: #FFD700;
+            --natural-green: #7FB77E;
+            --dark-text: #333333;
+            --light-text: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--ivory-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 248, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--rose-pink);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--natural-green);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--rose-pink);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--rose-pink);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart-icon {
+            position: relative;
+            margin-right: 20px;
+            font-size: 20px;
+            color: var(--dark-text);
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--rose-pink);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn-primary {
+            background-color: var(--rose-pink);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 203, 221, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background-color: #ffb1c9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 203, 221, 0.6);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--rose-pink);
+            color: var(--rose-pink);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 203, 221, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .btn-gold {
+            background-color: var(--gold);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-gold:hover {
+            background-color: #e6c200;
+            transform: translateY(-3px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 255, 248, 0.9) 0%, rgba(255, 255, 248, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1496318447583-f524534e9ce1?ixlib=rb-4.0.3') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .hero-text {
+            width: 50%;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+        
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--light-text);
+            max-width: 500px;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .hero-image {
+            width: 45%;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .bottle {
+            width: 100%;
+            max-width: 400px;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+        }
+        
+        .ingredients-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 130%;
+            opacity: 0.2;
+            z-index: -1;
+            animation: rotate 60s linear infinite;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--rose-pink);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .benefit-card {
+            background-color: var(--ivory-white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            font-size: 40px;
+            color: var(--rose-pink);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        /* Ingredients Section */
+        .ingredients {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, var(--ivory-white) 0%, white 100%);
+        }
+        
+        .ingredients-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .ingredients-text {
+            width: 45%;
+        }
+        
+        .ingredients-text h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+        
+        .ingredients-text p {
+            margin-bottom: 30px;
+            color: var(--light-text);
+        }
+        
+        .ingredients-grid {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .ingredient-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .ingredient-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .ingredient-icon {
+            font-size: 32px;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(127, 183, 126, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--natural-green);
+        }
+        
+        .ingredient-info h3 {
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            padding: 100px 0;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 50px auto 0;
+        }
+        
+        .step {
+            width: 200px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--rose-pink);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 125px;
+            width: 80px;
+            height: 2px;
+            background-color: var(--rose-pink);
+            opacity: 0.3;
+        }
+        
+        .step-icon {
+            font-size: 40px;
+            color: var(--natural-green);
+            margin-bottom: 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 15px;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, white 0%, var(--ivory-white) 100%);
+        }
+        
+        .pricing-options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 40px 30px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--rose-pink);
+        }
+        
+        .popular {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+        
+        .popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--gold);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--dark-text);
+        }
+        
+        .price span {
+            font-size: 16px;
+            color: var(--light-text);
+            font-weight: 400;
+        }
+        
+        .per-bottle {
+            font-size: 14px;
+            color: var(--light-text);
+            margin-top: -20px;
+            margin-bottom: 25px;
+        }
+        
+        .pricing-features {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            list-style: none;
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--natural-green);
+            font-weight: bold;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background-color: var(--ivory-white);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 80px;
+            font-family: 'Playfair Display', serif;
+            color: rgba(255, 203, 221, 0.3);
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background-color: #ddd;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--rose-pink) 0%, #ffa0c1 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 22px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--rose-pink);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--rose-pink);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text, .hero-image {
+                width: 100%;
+            }
+            
+            .hero-text {
+                margin-bottom: 50px;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .ingredients-container {
+                flex-direction: column;
+            }
+            
+            .ingredients-text, .ingredients-grid {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step:not(:last-child)::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Gore<span>ze</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/product.html">Products</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Ingredients</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Drink Your Glow – Naturally Radiant Skin Starts from Within</h1>
+                <p>A blend of 5 powerful ingredients for radiant skin & inner health.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary">Order Now</a>
+                    <a href="#" class="btn btn-secondary">Know More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="bottle.png" alt="Goreze Skin Glow Elixir" class="bottle">
+                <img src="https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Natural Ingredients" class="ingredients-bg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience the Goreze Difference</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Glowing Skin in 21 Days</h3>
+                    <p>Noticeably brighter, healthier-looking skin in just 3 weeks.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Reduces Pigmentation & Acne</h3>
+                    <p>Natural ingredients that help clear skin and even tone.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Supports Collagen & Hydration</h3>
+                    <p>Promotes skin elasticity and deep hydration from within.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Detox & Rich in Antioxidants</h3>
+                    <p>Powerful antioxidants to combat free radicals and detoxify.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 40px; font-style: italic; color: var(--light-text);">"Backed by Science, Loved by Nature"</p>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="ingredients">
+        <div class="container ingredients-container">
+            <div class="ingredients-text">
+                <h2>Nature's Glow, Bottled</h2>
+                <p>Our powerful blend of natural ingredients works synergistically to deliver visible results. Each bottle is crafted with care to bring you the best of nature and science.</p>
+                <a href="#" class="btn btn-primary">Discover the Science</a>
+            </div>
+            <div class="ingredients-grid">
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="ingredient-info">
+                        <h3>Amla</h3>
+                        <p>Natural Vitamin C booster</p>
+                    </div>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="ingredient-info">
+                        <h3>Beetroot</h3>
+                        <p>Improves blood circulation</p>
+                    </div>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div class="ingredient-info">
+                        <h3>Pomegranate</h3>
+                        <p>Antioxidant-rich superfruit</p>
+                    </div>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="ingredient-info">
+                        <h3>Rose Extract</h3>
+                        <p>Calming & refreshing</p>
+                    </div>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-capsules"></i>
+                    </div>
+                    <div class="ingredient-info">
+                        <h3>Vitamin C</h3>
+                        <p>Boosts collagen, fights free radicals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>Simple Steps to Radiant Skin</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Sip Daily</h3>
+                    <p>Take 1 bottle daily on an empty stomach</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Nourish</h3>
+                    <p>Powerful ingredients work from within</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Glow</h3>
+                    <p>Visible glow in 2-3 weeks</p>
+                </div>
+            </div>
+            <p style="margin-top: 50px; font-size: 18px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Safe, preservative-free, 100% natural formula that works with your body to reveal your most radiant skin.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Choose Your Glow Plan</h2>
+            </div>
+            <div class="pricing-options">
+                <div class="pricing-card">
+                    <h3>Starter Pack</h3>
+                    <div class="price">₹149 <span>/bottle</span></div>
+                    <p class="per-bottle">One-time purchase</p>
+                    <ul class="pricing-features">
+                        <li>1 Bottle (60ml)</li>
+                        <li>Free shipping over ₹499</li>
+                        <li>Ideal for first-time users</li>
+                        <li>Experience the glow</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Buy Now</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">BEST VALUE</div>
+                    <h3>Glow Kit</h3>
+                    <div class="price">₹1,299</div>
+                    <p class="per-bottle">Save ₹191 (₹129.90/bottle)</p>
+                    <ul class="pricing-features">
+                        <li>10 Bottles (1 month supply)</li>
+                        <li>Free shipping</li>
+                        <li>Free reusable bottle sleeve</li>
+                        <li>Visible results guarantee</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Glow Subscription</h3>
+                    <div class="price">₹1,199 <span>/month</span></div>
+                    <p class="per-bottle">Save ₹291 first order (₹119.90/bottle)</p>
+                    <ul class="pricing-features">
+                        <li>10 Bottles monthly</li>
+                        <li>Free shipping always</li>
+                        <li>15% discount on all orders</li>
+                        <li>Pause or cancel anytime</li>
+                    </ul>
+                    <a href="#" class="btn btn-gold">Subscribe & Save</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Real Glow, Real People</h2>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "I've struggled with dull skin for years. After 3 weeks of Goreze, my colleagues started asking what I'd changed. My skin has never looked this radiant!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Marketing Executive, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "As a guy who never cared much about skincare, I'm amazed at the difference Goreze made. My acne scars have faded, and I actually look more refreshed without doing anything else!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div class="author-info">
+                            <h4>Rahul Mehta</h4>
+                            <p>Software Engineer, Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Unlock Your Natural Radiance?</h2>
+            <p>Join thousands who have discovered the simplest way to glowing skin. Start your journey today.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-gold">Shop Now</a>
+                <a href="#" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Goreze</h3>
+                    <p>Premium, ready-to-drink skin glow supplement crafted for beauty and wellness from within.</p>
+                    <p>Glow Naturally. Drink Goreze.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Ingredients</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Why Choose Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Clean-label Ingredients</a></li>
+                        <li><a href="#">Lab-tested Quality</a></li>
+                        <li><a href="#">Great Taste Guaranteed</a></li>
+                        <li><a href="#">Sustainable Packaging</a></li>
+                        <li><a href="#">100% Natural Formula</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> contact@goreze.in</p>
+                    <p><i class="fab fa-whatsapp"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Goreze. All rights reserved. Glow Naturally.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartCount = document.querySelector('.cart-count');
+            const addToCartButtons = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-gold');
+            
+            let count = 0;
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if(e.target.classList.contains('btn')) {
+                        e.preventDefault();
+                        count++;
+                        cartCount.textContent = count;
+                        
+                        // Add animation effect
+                        cartCount.parentElement.classList.add('pulse');
+                        setTimeout(() => {
+                            cartCount.parentElement.classList.remove('pulse');
+                        }, 300);
+                    }
+                });
+            });
+            
+            // Floating animation for hero bottle
+            const bottle = document.querySelector('.bottle');
+            setInterval(() => {
+                bottle.style.transform = 'translateY(' + (Math.sin(Date.now() / 1000) * 10) + 'px)';
+            }, 50);
+        });
+    </script>
+</body>
+</html>
